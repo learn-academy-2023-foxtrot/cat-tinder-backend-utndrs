@@ -1,0 +1,2 @@
+class Utndr < ApplicationRecord
+end
