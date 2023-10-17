@@ -5,8 +5,12 @@ class UtndrsController < ApplicationController
     end
     def create
         utndr = Utndr.create(utndr_params)
-        render json: utndr
-    end
+        if utndr.valid?
+          render json: utndr
+         else
+           render json: utndr.errors, status: 422
+         end
+      end
     def update
     end
     def destroy
